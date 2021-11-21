@@ -16,7 +16,7 @@ class RootIndex extends React.Component {
         <Hero
           image={author.heroImage.gatsbyImageData}
           title={author.name}
-          content={author.shortBio.shortBio}
+          content={author.title}
         />
         <ArticlePreview posts={posts} />
       </Layout>
@@ -50,13 +50,10 @@ export const pageQuery = graphql`
       }
     }
     allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
+      filter: { contentful_id: { eq: "5dku857XfgzgYlsmGnqD2e" } }
     ) {
       nodes {
         name
-        shortBio {
-          shortBio
-        }
         title
         heroImage: image {
           gatsbyImageData(
